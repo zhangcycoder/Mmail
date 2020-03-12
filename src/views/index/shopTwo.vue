@@ -1,6 +1,8 @@
 <template>
     <div>
-        品类管理
+       <div class="top">
+            品类管理
+       </div>
     </div>
 </template>
 
@@ -11,5 +13,8 @@
 </script>
 
 <style lang="scss" scoped>
-
+@import "../../Scss/index.scss";
+.top{
+    @include topText()
+}
 </style>

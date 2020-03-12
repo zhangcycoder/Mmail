@@ -15,6 +15,16 @@ const network = {
     getUserList(params,callback){
         let url = GlobalUrl.userList(params)
         axios.post(url).then(res=>callback(res))
+    },
+    //订单列表接口
+    getOrderList(params,callback){
+        let url = GlobalUrl.orderList(params)
+        axios.post(url).then(res=>callback(res))
+    },
+    //订单查询接口
+    getSearch(params,callback){
+        let url = GlobalUrl.orderSearch(params);
+        axios.post(url).then(res=>callback(res))
     }
 }
 export {network}

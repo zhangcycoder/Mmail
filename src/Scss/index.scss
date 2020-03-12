@@ -1,0 +1,85 @@
+$fontColor:white;
+
+//首页设置
+@mixin homePage($a, $b, $c) {
+    background-color: rgb($a, $b, $c);
+    color: black;
+    transition: all 0.6s;
+    transform: scale(1.1);
+}
+
+//标题字体
+@mixin topText() {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 30px 0;
+}
+
+// 字体大小(加粗)
+@mixin FontSize($x) {
+    font-size: 30px;
+    margin: 30px 0;
+    font-size: $x;
+    font-weight: bold;
+    font-family: 微软雅黑;
+}
+
+
+
+// 字体大小(不加粗)
+@mixin FontOnly($x) {
+    font-size: $x;
+    font-family: 微软雅黑;
+}
+
+//字体全家桶
+@mixin Font($x, $y) {
+    font-size: $x;
+    font-family: 微软雅黑;
+    color: $y;
+}
+
+// 宽高背景
+@mixin SizeBack($x, $y, $z) {
+    width: $x;
+    height: $y;
+    background: $z;
+}
+
+//单纯的宽高
+@mixin Size($x, $y) {
+    width: $x;
+    height: $y;
+}
+
+// 菜单flex
+@mixin FlexMenu() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+//居于两侧
+@mixin FlexSpace() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// 单纯的padding
+@mixin Pd($x...) {
+    padding: $x;
+}
+
+// margin左右;
+@mixin Mlt($x, $y) {
+    margin-left: $x;
+    margin-top: $y;
+}
+
+//margin  padding
+@mixin MP($x, $y) {
+    margin: $x;
+    padding: $y;
+}

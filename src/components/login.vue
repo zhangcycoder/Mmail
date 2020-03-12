@@ -55,7 +55,7 @@ export default {
         Cookies.set("name", value);
         this.getUserInfo(JSON.parse(Cookies.get("name")));
         this.show = true;
-      }, 1200000);
+      }, 120000);
     },
     ...mapMutations(["getUserInfo"])
   }
