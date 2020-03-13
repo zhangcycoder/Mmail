@@ -1,11 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import homePage from '../views/index/homePage.vue'
-import order from '../views/index/order.vue'
-import shopOne from '../views/index/shopOne.vue'
-import shopTwo from '../views/index/shopTwo.vue'
-import userList from '../views/index/userList.vue'
 
 Vue.use(VueRouter)
 
@@ -18,28 +13,43 @@ const routes = [
       {
         path:'/',
         name:'homePage',
-        component :homePage
+        component :()=>import ('../views/index/homePage')
       },
       {
         path:'/order',
         name:'order',
-        component :order
+        component :()=>import ('../views/index/order.vue')
       },
       {
         path:'/shopOne',
         name:'shopOne',
-        component :shopOne
+        component :()=>import ('../views/index/shopOne.vue')
       },
       {
         path:'/shopTwo',
         name:'shopTwo',
-        component :shopTwo
+        component :()=>import ('../views/index/shopTwo.vue')
       },
       {
         path:'/userList',
         name:'userList',
-        component :userList
+        component :()=>import ('../views/index/userList.vue')
       },
+      {
+        path:'/produce',
+        name:'produce',
+        component :()=>import ('../views/page/productDetail')
+      },
+      {
+        path:'/categoryAdd',
+        name:'categoryAdd',
+        component :()=>import('../views/page/category.vue')
+      },
+      {
+        path:'/orderDetail',
+        name:'orderDetail',
+        component :()=>import('../views/page/orderDetail.vue')
+      }
 
     ]
   },

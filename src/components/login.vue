@@ -30,7 +30,6 @@ export default {
       };
      
       this.Network.getLogin(params, res => {
-        console.log(res)
         let cookObj = {};
         if (res.data.status == 0) {
           cookObj.id = res.data.data.id;
@@ -55,7 +54,7 @@ export default {
         Cookies.set("name", value);
         this.getUserInfo(JSON.parse(Cookies.get("name")));
         this.show = true;
-      }, 120000);
+      }, 1200000);
     },
     ...mapMutations(["getUserInfo"])
   }

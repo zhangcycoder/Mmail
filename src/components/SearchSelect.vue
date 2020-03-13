@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       input: "",
-      value: "按单号查询"
+      value: this.options[0].value
     };
   },
   methods: {

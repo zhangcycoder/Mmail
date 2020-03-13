@@ -32,8 +32,8 @@ import Cookies from 'js-cookie'
 export default {
     methods:{
         exit(){
+
           Cookies.set("name", {status:"登录超时"});
-          // Cookies.set(JSON.stringify('name',{status:"登录超时"}))
             this.$router.push('/login')
         }
     }

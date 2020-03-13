@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div>
-      <Header/>
+      <Header />
     </div>
     <el-row :gutter="10" class="box">
       <el-col :xs="8" :sm="6" :md="4" :lg="4" :xl="4" class="home_left">
@@ -9,40 +9,40 @@
           <sideBar />
         </div>
       </el-col>
-      <el-col :xs="16" :sm="18" :md="20" :lg="20" :xl="20" class="home_right">
+      <div class="right">
+        <el-col :xs="16" :sm="18" :md="20" :lg="20" :xl="20" class="home_right">
           <router-view></router-view>
-      </el-col>
+        </el-col>
+      </div>
     </el-row>
   </div>
 </template>
 
 <script>
 import sideBar from "./index/sidebar";
-import Header from './index/Header'
+import Header from "./index/Header";
 export default {
   name: "Home",
-  components: { sideBar,Header }
+  components: { sideBar, Header }
 };
 </script>
 
 <style >
-.home
-{
+.home {
   height: 900px;
 }
-.box
-{
+.box {
   height: 100%;
 }
-.home_left
-{
+.home_left {
   height: 100%;
-  background-color: rgb(84, 92, 100)
+  background-color: rgb(84, 92, 100);
 }
-.home_right
-{
-  height: 100%;
-  background-color: rgb(243, 243, 243)
+
+.home_right {
+  height: 850px;
+  overflow:auto;
+  background-color: rgb(243, 243, 243);
 }
 .el-col {
   border-radius: 4px;
