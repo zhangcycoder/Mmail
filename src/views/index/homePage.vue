@@ -41,7 +41,8 @@ export default {
     };
   },
   mounted() {
-    this.Network.statistic(res => (this.list = res.data.data));
+    console.log(this.Network.statistic())
+    this.Network.statistic().then(res => (this.list = res.data.data));
   }
 };
 </script>
@@ -49,7 +50,7 @@ export default {
 <style lang="scss"  scoped>
 @import "../../Scss/index.scss";
 .top {
- @include topText()
+  @include topText();
 }
 
 .page_Box {
@@ -58,9 +59,9 @@ export default {
   font-size: 35px;
 }
 .a {
-  height: 15vh;
+  height: 160px;
   text-align: center;
-  line-height: 7vh;
+  line-height: 80px;
   color: white;
 }
 .user {

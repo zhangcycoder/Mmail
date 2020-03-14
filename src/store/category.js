@@ -16,41 +16,46 @@ export default {
 
     mutations: {
         getCategoryList(state) {
-            _this.prototype.Network.getCategory(res => {
-                state.categoryList = res.data.data
-            })
+            _this.prototype.Network.getCategory()
+                .then(res => {
+                    state.categoryList = res.data.data
+                })
         },
         getCategoryChildren(state, params) {
-            _this.prototype.Network.getCategoryChildrenList(params, res => {
-                state.categoryChildrenList = res.data.data
-            })
+            _this.prototype.Network.getCategoryChildrenList(params)
+                .then(res => {
+                    state.categoryChildrenList = res.data.data
+                })
         },
         setCategoryName(state, params) {
-            _this.prototype.Network.setCategoryName(params, res => {
-                console.log(res);
-            })
+            _this.prototype.Network.setCategoryName(params)
+                .then(res => {
+                    console.log(res);
+                })
         },
         getCategory(state) {
-            _this.prototype.Network.getCategory(res => {
-                state.list = res.data.data;
-            });
+            _this.prototype.Network.getCategory()
+                .then(res => {
+                    state.list = res.data.data;
+                })
             state.show = [{ a: "修改名称", b: "查看其子品类", label: "操作" }]
 
         },
         getChildren(state, params) {
-            _this.prototype.Network.getCategoryChildrenList(params, res => {
-                state.list = res.data.data
-            });
+            _this.prototype.Network.getCategoryChildrenList(params)
+                .then(res => {
+                    state.list = res.data.data
+                })
             state.show = [{ a: "修改名称", label: "操作" }]
 
         },
-        setAddCategory(state,params){
-            _this.prototype.Network.setAddCategory(params,res=>{
-
-                if(res.data.data=='添加品类成功'){
-                    alert(res.data.data)
-                }
-            })
+        setAddCategory(state, params) {
+            _this.prototype.Network.setAddCategory(params)
+                .then(res => {
+                    if (res.data.data == '添加品类成功') {
+                        alert(res.data.data)
+                    }
+                })
         }
     },
 

@@ -60,7 +60,6 @@ export default {
     }
   },
   computed: {
-    //'list','options','show','text','titleArr','params'
     ...mapState(["order"])
   }
 };

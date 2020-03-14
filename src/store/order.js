@@ -22,17 +22,19 @@ export default {
     },
     mutations: {
         getOrderInfo(state) {
-            _this.prototype.Network.getOrderList(this.params, res => {
-                state.list = res.data.data.list;
-            });
+            _this.prototype.Network.getOrderList(this.params)
+                .then(res => {
+                    state.list = res.data.data.list;
+                });
         },
-        getOrderDetail(state){
-            _this.prototype.Network.getOrderDetail(state.order.orderNo,res=>{
-              console.log(res)
-            })
-          },
-          getOrder(state,params){
+        getOrderDetail(state) {
+            _this.prototype.Network.getOrderDetail(state.order.orderNo)
+                .then(res => {
+                    console.log(res)
+                })
+        },
+        getOrder(state, params) {
             state.order = params
-          }
+        }
     }
 }

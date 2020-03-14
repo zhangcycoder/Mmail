@@ -46,14 +46,16 @@ export default {
         },
 
         getAddProduct(state, params) {
-            _this.prototype.Network.getAddProduct(params, res => {
-                console.log(res)
-            })
+            _this.prototype.Network.getAddProduct(params)
+                .then(res => {
+                    console.log(res)
+                })
         },
         setProduct(state, params) {
-            _this.prototype.Network.setProduct(params, res => {
-                console.log(res)
-            })
+            _this.prototype.Network.setProduct(params)
+                .then(res => {
+                    console.log(res)
+                })
         },
         getPageProduct(state, value) {
             state.product = {

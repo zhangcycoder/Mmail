@@ -28,8 +28,8 @@ export default {
         username: this.id,
         password: this.pas
       };
-     
-      this.Network.getLogin(params, res => {
+
+      this.Network.getLogin(params).then(res => {
         let cookObj = {};
         if (res.data.status == 0) {
           cookObj.id = res.data.data.id;
@@ -49,7 +49,7 @@ export default {
       });
     },
     cook(value) {
-        clearTimeout(a);
+      clearTimeout(a);
       let a = setTimeout(() => {
         Cookies.set("name", value);
         this.getUserInfo(JSON.parse(Cookies.get("name")));
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="stylus" >
-.login_box 
+.login_box {
   width: 50%;
   text-align: center;
   padding: 10px;
@@ -73,8 +73,10 @@ export default {
   left: 50%;
   margin: -150px 0 0 -25%;
   line-height: 50px;
-.hint
-     font-size 14px;
-     color red;
+}
 
+.hint {
+  font-size: 14px;
+  color: red;
+}
 </style>
